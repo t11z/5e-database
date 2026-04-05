@@ -22,6 +22,14 @@ const ClassSpecificSchema = z.object({
   metamagic_known: z.number().optional(),
   sorcery_points: z.number().optional(),
   wild_shape_uses: z.number().optional(),
+  // Half-casters + Pact Magic (Batch 3)
+  aura_range: z.number().optional(),
+  favored_enemy: z.number().optional(),
+  invocations_known: z.number().optional(),
+  mystic_arcanum_level_6: z.number().optional(),
+  mystic_arcanum_level_7: z.number().optional(),
+  mystic_arcanum_level_8: z.number().optional(),
+  mystic_arcanum_level_9: z.number().optional(),
 });
 
 const LevelSpellcastingSchema = z.object({
