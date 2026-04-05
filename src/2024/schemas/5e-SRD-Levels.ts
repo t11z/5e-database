@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { APIReferenceSchema } from '../../schemas/common';
 
 const ClassSpecificSchema = z.object({
+  // Non-casters (Batch 1)
   action_surges: z.number().optional(),
   extra_attacks: z.number().optional(),
   focus_points: z.number().optional(),
@@ -11,6 +12,16 @@ const ClassSpecificSchema = z.object({
   rage_damage_bonus: z.number().optional(),
   sneak_attack: z.object({ dice_count: z.number(), dice_value: z.number() }).optional(),
   unarmored_movement: z.number().optional(),
+  // Full casters (Batch 2)
+  arcane_recovery_levels: z.number().optional(),
+  bardic_inspiration_die: z.number().optional(),
+  channel_divinity_charges: z.number().optional(),
+  creating_spell_slots: z.array(
+    z.object({ sorcery_point_cost: z.number(), spell_slot_level: z.number() })
+  ).optional(),
+  metamagic_known: z.number().optional(),
+  sorcery_points: z.number().optional(),
+  wild_shape_uses: z.number().optional(),
 });
 
 const LevelSpellcastingSchema = z.object({
